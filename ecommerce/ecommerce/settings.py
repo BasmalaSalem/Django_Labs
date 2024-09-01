@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'mart.apps.MartConfig',
-    'products.apps.ProductsConfig'
+    'products.apps.ProductsConfig',
+    'login.apps.LoginConfig',
 ]
 
 MIDDLEWARE = [
@@ -76,10 +77,20 @@ WSGI_APPLICATION = 'ecommerce.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgresqldb',  
+        'USER': 'admin', 
+        'PASSWORD': 'admin11',  
+        'HOST': 'localhost',
+        'PORT': '5432',  
     }
 }
 
